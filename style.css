@@ -1,0 +1,199 @@
+/* Menambahkan reset untuk margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Memastikan ukuran elemen lebih konsisten */
+}
+
+
+html, body {
+  height: 100%; /* Memastikan tinggi halaman penuh */
+}
+
+.container {
+  min-height: 100vh; /* Memastikan konten minimal setinggi viewport */
+  display: flex;
+  flex-direction: column; /* Mengatur arah konten menjadi kolom */
+}
+
+/* Gaya untuk bagian utama */
+.main-content {
+  flex: 1; /* Mengizinkan konten utama untuk mengisi ruang yang tersisa */
+  padding: 20px; /* Menambahkan padding untuk konten utama */
+  padding-top: 60px; /* Memberikan ruang untuk navbar */
+}
+
+
+body {
+    background-color: #e9ecef;
+    color: #212529;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0; /* Menghilangkan margin default */
+}
+
+.navbar {
+    background-color: #343a40; /* Warna latar belakang navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Bayangan untuk kedalaman */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: flex-end; /* Menyebar item ke sebelah kanan */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+    padding: 1rem 2rem; /* Menambahkan padding */
+    position: fixed; /* Membuat navbar tetap di atas saat scroll */
+    top: 0; /* Posisi atas */
+    left: 0; /* Posisi kiri */
+    right: 0; /* Posisi kanan */
+    z-index: 1000; /* Menjaga navbar di atas konten lainnya */
+}
+
+.navbar a {
+    color: #ffffff; /* Warna teks tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    margin: 0 15px; /* Jarak antar tautan */
+    font-size: 1.1rem; /* Ukuran font tautan */
+    position: relative; /* Untuk efek hover */
+    transition: color 0.3s; /* Efek transisi untuk hover */
+}
+
+.navbar a::after {
+    content: ''; /* Membuat elemen setelah tautan */
+    display: block; /* Menampilkan elemen */
+    height: 2px; /* Tinggi garis bawah */
+    background: #ffc107; /* Warna garis bawah */
+    width: 0; /* Lebar awal */
+    transition: width 0.3s; /* Efek transisi untuk lebar */
+    position: absolute; /* Posisi absolut untuk garis bawah */
+    left: 50%; /* Memposisikan di tengah */
+    bottom: -5px; /* Jarak dari bawah teks */
+    transform: translateX(-50%); /* Memastikan garis berada di tengah */
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Lebar penuh saat hover */
+}
+
+.navbar a:hover {
+    color: #ffc107; /* Warna saat hover */
+}
+
+.jumbotron {
+    background-color: #f8f9fa;
+    color: #343a40;
+    padding: 5rem 2rem;
+    border-radius: 0 0 60px 60px;
+    text-align: center;
+}
+
+.jumbotron img {
+    width: 150px; /* Ukuran gambar profil */
+    height: 150px; /* Ukuran gambar profil */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    margin-bottom: 20px; /* Jarak antara gambar dan teks */
+}
+
+.jumbotron h1 {
+    font-size: 2.5rem; /* Ukuran font untuk nama */
+    margin: 10px 0; /* Jarak atas dan bawah */
+}
+
+.jumbotron p {
+    font-size: 1.2rem; /* Ukuran font untuk deskripsi */
+    margin-bottom: 30px; /* Jarak bawah */
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Menghindari konten melampaui batas */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #212529;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    color: #ffffff;
+    font-size: 1.8rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffc107;
+}
+
+.section-title {
+    margin: 2rem 0;
+    font-size: 3rem;
+    color: #343a40;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Gaya untuk bagian Keahlian */
+#skills {
+    padding: 80px 0;
+    background-color: #f1f3f5;
+}
+
+#skills h5 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #495057;
+}
+
+#skills p {
+    font-size: 1.2rem;
+    color: #495057;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Mengubah tata letak navbar pada perangkat kecil */
+        align-items: flex-start; /* Menyelaraskan item ke kiri */
+    }
+
+    .section-title {
+        font-size: 2.5rem; /* Mengurangi ukuran font judul */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Menambahkan jarak antar kartu */
+    }
+
+    #skills h5 {
+        font-size: 1.4rem; /* Mengurangi ukuran font subjudul */
+    }
+
+    #skills p {
+        font-size: 1rem; /* Mengurangi ukuran font teks */
+    }
+}
+
+@media (max-width: 576px) {
+    .social-icons a {
+        font-size: 1.5rem; /* Mengurangi ukuran font ikon sosial */
+    }
+
+    .jumbotron {
+        padding: 3rem 1rem; /* Mengurangi padding jumbotron */
+    }
+}
+
+/* Gaya untuk bagian "About Me" */
+.about-me {
+    padding: 40px 20px; /* Padding untuk bagian About Me */
+    background-color: #e9ecef; /* Warna latar belakang */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+}
